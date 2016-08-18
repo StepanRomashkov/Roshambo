@@ -1,10 +1,12 @@
+import java.util.Scanner;
 
 public class RoshamboApp {
-
+	public static Scanner scan = new Scanner(System.in);
+	
 	public static void main(String[] args) {
-
-		RockPlayer r1 = new RockPlayer("Test");
-		System.out.println(r1.getName());
+		System.out.println("Welcome to Rock Paper Scissors!\nEnter your name: ");
+		
+	scan.close();
 	}
 
 }
