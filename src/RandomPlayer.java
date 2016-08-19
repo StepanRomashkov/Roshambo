@@ -1,29 +1,29 @@
-
+import java.util.Random;
 public class RandomPlayer extends Player {
-
+	
 	public RandomPlayer(String name) {
 		super(name);
 	}
-
+	
 	@Override
-	public Roshambo generateRoshambo() {
-		Roshambo ro = Roshambo.SCISSORS;
-		int cast = (int)(Math.random() * 3);
+	public void generateRoshambo() {
+		Random rand = new Random();
+		int cast;
+		if (getGameMode())
+			cast = rand.nextInt(3);
+		else
+			cast = (int)(Math.random() * 3);
 		switch (cast) {
 			case 0:
-				ro = Roshambo.PAPER;
+				setRoshambo(Roshambo.PAPER);
 				break;
 			case 1:
-				ro = Roshambo.ROCK;
+				setRoshambo(Roshambo.ROCK);
 				break;
 			case 2:
-				ro = Roshambo.SCISSORS;
-				break;
-			default:
-				System.out.println("Error!");
+				setRoshambo(Roshambo.SCISSORS);
 				break;
 		}
-		return ro;
 	}
 
 }

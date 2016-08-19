@@ -23,5 +23,13 @@ public enum Roshambo {
 		return result;
 	}
 	
+	public static boolean victory(Roshambo you, Roshambo opp) {
+		if ((you.equals(ROCK) && opp.equals(SCISSORS)) 
+				|| (you.equals(PAPER) && opp.equals(ROCK))
+				|| (you.equals(SCISSORS) && opp.equals(PAPER)))
+			return true;
+		else return false;
+	}
+	
 }
 

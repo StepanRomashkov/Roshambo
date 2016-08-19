@@ -4,9 +4,10 @@ public abstract class Player {
 	private Roshambo currentRoshambo = Roshambo.PAPER;
 	private int wins = 0;
 	private int losses = 0;
+	private boolean hardMode;
 	
 	public Player() {
-		name = "Player1";
+		name = "Computer";
 	}
 	
 	public Player(String name){
@@ -37,9 +38,25 @@ public abstract class Player {
 	}
 	
 	public String getPlayerStat() {
-		return "wins: " + wins + "\nlosses: " + losses;
+		return "wins: " + wins + "\tlosses: " + losses;
 	}
 
-	public abstract Roshambo generateRoshambo();
-		
+	public boolean getGameMode() {
+		return hardMode;
+	}
+	
+	public void setHardMode() {
+		hardMode = true;
+	}
+	
+	public void setNormalMode() {
+		hardMode = false;
+	}
+	
+	public abstract void generateRoshambo();
+	
+//	public String victory(Roshambo you, Roshambo opp) {
+//		if Player())
+//		return true;
+//	}
 }

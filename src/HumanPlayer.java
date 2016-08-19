@@ -6,11 +6,11 @@ public class HumanPlayer extends Player {
 	}
 
 	@Override
-	public Roshambo generateRoshambo() {		
-		return getRoshambo();
+	public void generateRoshambo() {		
+		;
 	}
 	
-	public String generateRoshambo(String r) {
+	public void generateRoshambo(String r) {
 		switch (r) {
 			case "r":
 				setRoshambo(Roshambo.ROCK);
@@ -20,9 +20,8 @@ public class HumanPlayer extends Player {
 				break;
 			case "s":
 				setRoshambo(Roshambo.SCISSORS);
-				break;				
+				break;
 		}
-		return getRoshambo().toString();
 	}
 
 }
